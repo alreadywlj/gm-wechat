@@ -4,12 +4,6 @@ import Taro, { requirePlugin } from '@tarojs/taro';
 
 import { View, Text, Image, } from '@tarojs/components';
 
-import { Api } from '../../config/Api';
-
-import Article from '../commpents/articles/article';
-
-import Audio from '../commpents/audio/audio';
-
 // process.env.TARO_ENV;
 
 import { AtButton, AtFab, AtTabs, AtTabsPane, AtNoticebar } from 'taro-ui'
@@ -17,15 +11,9 @@ import { AtButton, AtFab, AtTabs, AtTabsPane, AtNoticebar } from 'taro-ui'
 import './index.less';
 
 
-export default class Index extends Component {
+export default class Mine extends Component {
 
   state = {
-    articles: [
-      { note: "springBoot", extra: "1", title: "辰尚", thumb: 'http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG', content: "test1" },
-      { note: "dva", extra: "2", title: "新用卡", thumb: 'http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG', content: "test12" },
-      { note: "react", extra: "3", title: "博彦", thumb: 'http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG', content: "test13" }
-
-    ],
     current: 0,
     person: {
       gender: 'female',
@@ -37,20 +25,13 @@ export default class Index extends Component {
 
   }
 
-  testButton = async (e) => {
+  testButton = (e) => {
     //taro中state是异步的 如果想要获取最新的状态需要在 回调参数中获取
     this.setState({ age: 'weilijun' },
       //获取变化之后的数据
       () => {
         console.log(this.setState.name);
       });
-
-    const req = await Taro.request({
-      url: Api.index
-    });
-
-    console.log(req);
-
   }
 
   jump = (e) => {
@@ -62,6 +43,8 @@ export default class Index extends Component {
 
   }
 
+
+
   componentWillMount() {
     // console.log("willMount--->页面加载前", "1");
   }
@@ -72,13 +55,6 @@ export default class Index extends Component {
    */
   componentDidMount() {
     // console.log("componentDidMount-->页面加载时", "2");
-    const systemInfo = Taro.getSystemInfoSync();
-
-    console.log('----bg ed---');
-    console.log(systemInfo);
-    console.log(systemInfo.windowHeight);
-    console.log('----ed ed---');
-
     this.setState({ name: 'weilijun' });
   }
 
@@ -145,48 +121,36 @@ export default class Index extends Component {
 
   render() {
 
-    const tabList = [{ title: '高总' }, { title: '标签页2' }, { title: '标签页3' }]
+    const tabList = [{ title: '标签页1' }, { title: '标签页2' }, { title: '标签页3' }]
 
     return (
-      <View className='index'>
+      <View className='mine'>
 
-        <View className='banner'>
+        <View className='banner'></View>
 
-          <Image className='banner' src="https://image.duoyi.com/com/143/pic/883fb290963f48918d8ce511814b12f7.png"></Image>
+        <View className='tip'>
 
-        </View>
-        {/* className='tip' */}
-        <View >
-          <AtNoticebar showMore >
-            非常感谢您,花费浏览我的个人小程序,希望它能给您带来一些简历之外的惊喜!
-          </AtNoticebar>
         </View>
 
         <View className='col'>
-          <Article articles={this.state.articles} />
 
-          {/* <AtTabs height="200" current={this.state.current} tabList={tabList} onClick={this.handleClick.bind(this)}>
-            <AtTabsPane current={this.state.current} index={0} >
-              <View className='row' >加班真好!</View>
-             
+          <AtTabs height="200" current={this.state.current} tabList={tabList} onClick={this.handleClick.bind(this)}>
+
+            <AtTabsPane current={this.state.current} mine={0} >
+              <View className='row' >标签页一的内容</View>
             </AtTabsPane>
 
-            <AtTabsPane current={this.state.current} index={1}>
+            <AtTabsPane current={this.state.current} mine={1}>
               <View className='row' >标签页二的内容</View>
-
             </AtTabsPane>
 
-            <AtTabsPane current={this.state.current} index={2}>
+            <AtTabsPane current={this.state.current} mine={2}>
               <View className='row' >标签页三的内容</View>
             </AtTabsPane>
-          </AtTabs> */}
+          </AtTabs>
 
         </View>
-
-        <View className='final'>
-
-        </View>
-
+   
       </View>
 
     )

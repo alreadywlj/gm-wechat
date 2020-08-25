@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: '登录页'
+  navigationBarTitleText: 'Hi 欢迎来到 JerryWei 的个微信空间'
 }

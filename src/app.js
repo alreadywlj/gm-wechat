@@ -1,22 +1,29 @@
 import { Component } from 'react';
 
+import Taro from '@tarojs/taro';
+
 import './app.less';
 
-import 'taro-ui/dist/style/index.scss' ;
+import 'taro-ui/dist/style/index.scss';
 
 
 class App extends Component {
 
-  componentDidMount () {}
+  componentDidMount() {
+    const sysInfo = Taro.getSystemInfoSync();
 
-  componentDidShow () {}
+    console.log(sysInfo);
 
-  componentDidHide () {}
+  }
 
-  componentDidCatchError () {}
+  componentDidShow() { }
+
+  componentDidHide() { }
+
+  componentDidCatchError() { }
 
   // this.props.children 是将要会渲染的页面
-  render () {
+  render() {
     return this.props.children
   }
 }
