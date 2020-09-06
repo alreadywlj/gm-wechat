@@ -8,6 +8,14 @@ import { Api } from '../../config/Api';
 
 import Article from '../commpents/articles/article';
 
+import Header from './header/header';
+
+import Banner from './content/banner'
+
+import Content from './content/content';
+
+import Footer from './footer/footer';
+
 import Audio from '../commpents/audio/audio';
 
 // process.env.TARO_ENV;
@@ -74,10 +82,9 @@ export default class Index extends Component {
     // console.log("componentDidMount-->页面加载时", "2");
     const systemInfo = Taro.getSystemInfoSync();
 
-    console.log('----bg ed---');
-    console.log(systemInfo);
+    console.log('----bg mood index.jsx ed---');
     console.log(systemInfo.windowHeight);
-    console.log('----ed ed---');
+    console.log('----ed mood index.jsx ed---');
 
     this.setState({ name: 'weilijun' });
   }
@@ -149,14 +156,23 @@ export default class Index extends Component {
 
     return (
       <View className='index'>
+         <Header></Header>
+          
+         <Banner></Banner>
+       
+         <Content></Content>
+ 
+         <Footer></Footer>
 
-        <View className='banner'>
+
+
+        {/* <View className='banner'>
 
           <Image className='banner' src="https://image.duoyi.com/com/143/pic/883fb290963f48918d8ce511814b12f7.png"></Image>
 
         </View>
-        {/* className='tip' */}
-        <View >
+
+        <View className='tip'>
           <AtNoticebar showMore >
             非常感谢您,花费浏览我的个人小程序,希望它能给您带来一些简历之外的惊喜!
           </AtNoticebar>
@@ -165,10 +181,10 @@ export default class Index extends Component {
         <View className='col'>
           <Article articles={this.state.articles} />
 
-          {/* <AtTabs height="200" current={this.state.current} tabList={tabList} onClick={this.handleClick.bind(this)}>
+          <AtTabs height="200" current={this.state.current} tabList={tabList} onClick={this.handleClick.bind(this)}>
             <AtTabsPane current={this.state.current} index={0} >
               <View className='row' >加班真好!</View>
-             
+
             </AtTabsPane>
 
             <AtTabsPane current={this.state.current} index={1}>
@@ -179,14 +195,13 @@ export default class Index extends Component {
             <AtTabsPane current={this.state.current} index={2}>
               <View className='row' >标签页三的内容</View>
             </AtTabsPane>
-          </AtTabs> */}
+          </AtTabs>
 
         </View>
 
         <View className='final'>
 
-        </View>
-
+        </View> */}
       </View>
 
     )

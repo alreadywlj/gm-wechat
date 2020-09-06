@@ -4,9 +4,9 @@ import Taro, { requirePlugin } from '@tarojs/taro';
 
 import { View, Text, Image } from '@tarojs/components';
 
-// process.env.TARO_ENV;
+import { AtDivider, AtButton, AtFab, AtTabs, AtTabsPane } from 'taro-ui'
 
-import { AtButton, AtFab, AtTabs, AtTabsPane } from 'taro-ui'
+import  Card  from './card/card';
 
 import './index.less';
 
@@ -14,7 +14,13 @@ import './index.less';
 export default class Login extends Component {
 
   state = {
-
+      cards:
+      [
+        {name:"辰尚智能音频"},
+      {name:"中银法院案款管理"},
+      {name:"默沙东 WeChat connect+"},
+      {name:"上海交行信用卡查询"},
+    ],
   }
 
   componentWillMount() {
@@ -85,15 +91,17 @@ export default class Login extends Component {
     console.log(e);
   }
 
-
-
   render() {
 
     return (
       //最外层
       <View className='index'>
 
-        <View className='image'>
+       <AtDivider content='个人经验' fontColor='#ff9900' lineColor='#ff9900' />  
+
+          <Card cards={this.state.cards}></Card>
+
+        {/* <View className='image'>
 
           <View  className='image oneCol' >
             <AtButton onClick={this.jump.bind(this)}>宠物图鉴</AtButton>  
@@ -116,7 +124,7 @@ export default class Login extends Component {
             <AtButton onClick={this.jump.bind(this)}>宠物图鉴</AtButton>
           </View>
 
-        </View>
+        </View> */}
 
       </View>
 

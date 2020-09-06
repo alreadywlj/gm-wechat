@@ -6,16 +6,21 @@ import Taro, { requirePlugin } from '@tarojs/taro';
 
 import { AtCard } from "taro-ui"
 
-import './Article.less';
+import './card.less';
 
 
-export default class Articles extends Component {
+export default class Card extends Component {
 
     state = {
 
     }
 
     componentWillMount() {
+
+        this.setState({
+            cards: this.props.cards ? this.props.cards : [{ name: "接口调动,失败此为默认" }]
+        });
+
         // console.log("willMount--->页面加载前", "1");
     }
 
@@ -31,6 +36,7 @@ export default class Articles extends Component {
      * 销毁
      */
     componentWillUnmount() {
+
         // console.log("componentWillUnmount-->页面销毁时");
     }
 
@@ -38,6 +44,7 @@ export default class Articles extends Component {
      * 在react中不存在 页面显示时会触发
      */
     componentDidShow() {
+
         // console.log("页面显示时会触发--->componentDidShow", "2");
     }
 
@@ -45,6 +52,7 @@ export default class Articles extends Component {
     * 在react中不存在 页面隐藏时会触发
     */
     componentDidHide() {
+
         // console.log("componentDidHide--->componentDidHide");
     }
 
@@ -52,6 +60,7 @@ export default class Articles extends Component {
      * state 中数据将要更新的时候
      */
     componentWillUpdate() {
+
         // console.log("componentWillUpdate--->数据将要更新的时候");
     }
 
@@ -59,6 +68,7 @@ export default class Articles extends Component {
      * state 数据更新过后
      */
     componentDidUpdate() {
+
         // console.log("componentWillUpdate--->数据更新过后");
     }
 
@@ -75,23 +85,23 @@ export default class Articles extends Component {
     /**
      * 父组件给子组件传递属性时才会被调用
      */
-    componentWillReceiveProps() {
-
-    }
+    componentWillReceiveProps() { }
 
     jump = (e) => {
         console.log(e);
     }
 
-
-
     render() {
-
+         const {cards} =  this.state;
         return (
+            <View className="card">
+                {
+               
+               cards.map(item =>                    
+                 <View className="item">{item.name}</View>                    
+                )
 
-            <View >
-
-
+                }
             </View>
         )
     }

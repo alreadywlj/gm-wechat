@@ -4,9 +4,11 @@ import Taro, { requirePlugin } from '@tarojs/taro';
 
 import { View, Text, Image, } from '@tarojs/components';
 
-// process.env.TARO_ENV;
-
 import { AtButton, AtFab, AtTabs, AtTabsPane, AtNoticebar } from 'taro-ui'
+
+import List from '../commpents/list/list';
+
+import  Header from './header/header';
 
 import './index.less';
 
@@ -121,35 +123,13 @@ export default class Mine extends Component {
 
   render() {
 
-    const tabList = [{ title: '标签页1' }, { title: '标签页2' }, { title: '标签页3' }]
-
+   
     return (
       <View className='mine'>
-
-        <View className='banner'></View>
-
-        <View className='tip'>
-
-        </View>
-
-        <View className='col'>
-
-          <AtTabs height="200" current={this.state.current} tabList={tabList} onClick={this.handleClick.bind(this)}>
-
-            <AtTabsPane current={this.state.current} mine={0} >
-              <View className='row' >标签页一的内容</View>
-            </AtTabsPane>
-
-            <AtTabsPane current={this.state.current} mine={1}>
-              <View className='row' >标签页二的内容</View>
-            </AtTabsPane>
-
-            <AtTabsPane current={this.state.current} mine={2}>
-              <View className='row' >标签页三的内容</View>
-            </AtTabsPane>
-          </AtTabs>
-
-        </View>
+   
+        <Header></Header>
+       
+        <List></List>
    
       </View>
 

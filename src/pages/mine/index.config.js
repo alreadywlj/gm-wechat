@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: 'Hi,我是JerryWei~'
+  navigationBarTitleText: '关于作者'
 }

@@ -4,14 +4,20 @@ import { View, Text, Image, } from '@tarojs/components';
 
 import Taro, { requirePlugin } from '@tarojs/taro';
 
-import { AtCard } from "taro-ui"
+import { AtIcon } from "taro-ui"
 
-import './article.less';
-
-
-export default class Articles extends Component {
+import _moment from "moment";
 
 
+import './header.less';
+
+
+export default class Header extends Component {
+
+    state = {
+        isLike: true,
+        time: _moment(),
+    }
 
     componentWillMount() {
         // console.log("willMount--->页面加载前", "1");
@@ -81,31 +87,32 @@ export default class Articles extends Component {
         console.log(e);
     }
 
-    state = {
-        articles: [
-            { note: "springBoot", extra: "1", title: "辰尚", thumb: 'http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG', content: "test1" },
-            { note: "dva", extra: "2", title: "新用卡", thumb: 'http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG', content: "test12" },
-            { note: "react", extra: "3", title: "博彦", thumb: 'http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG', content: "test13" }
-
-        ],
-
+    changeHeart = (e) => {
+        this.setState({
+            isLike: !this.state.isLike
+        })
     }
 
     render() {
 
-        let { articles } = this.props;
         return (
 
-            <View >
-                {            
-                articles.map(item => {
-                    return <AtCard note={item.note} extra={item.extra} title={item.title} thumb={item.thumb} >
-                           {item.content}
-                    </AtCard>
-                })                             
-                }
-            </View>
+            <View className="header">
 
+                {/* 时间日期 */}
+                <View className="time"> 
+                  <Text className="oneProperties">NO.</Text>  
+                  <Text className="twoProperties">丨</Text>  
+                  <Text className="threeProperties">八月三十</Text>  
+                
+                </View>
+
+                {/* 收藏非收藏 */}
+                <AtIcon value={this.state.isLike ? 'heart-2' : 'heart'} className="icon" onClick={this.changeHeart.bind(this)}></AtIcon>
+
+                <AtIcon value="share-2" className="share" onClick={this.changeHeart.bind(this)}></AtIcon>
+        
+            </View>
         )
     }
 }

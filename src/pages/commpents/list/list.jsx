@@ -4,14 +4,16 @@ import { View, Text, Image, } from '@tarojs/components';
 
 import Taro, { requirePlugin } from '@tarojs/taro';
 
-import { AtCard } from "taro-ui"
+import { AtList, AtListItem  } from "taro-ui"
 
-import './article.less';
-
-
-export default class Articles extends Component {
+import './list.less';
 
 
+export default class List extends Component {
+
+    state = {
+
+    }
 
     componentWillMount() {
         // console.log("willMount--->页面加载前", "1");
@@ -81,31 +83,24 @@ export default class Articles extends Component {
         console.log(e);
     }
 
-    state = {
-        articles: [
-            { note: "springBoot", extra: "1", title: "辰尚", thumb: 'http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG', content: "test1" },
-            { note: "dva", extra: "2", title: "新用卡", thumb: 'http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG', content: "test12" },
-            { note: "react", extra: "3", title: "博彦", thumb: 'http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG', content: "test13" }
 
-        ],
-
-    }
 
     render() {
 
-        let { articles } = this.props;
         return (
 
-            <View >
-                {            
-                articles.map(item => {
-                    return <AtCard note={item.note} extra={item.extra} title={item.title} thumb={item.thumb} >
-                           {item.content}
-                    </AtCard>
-                })                             
-                }
-            </View>
+<View className="list">
+<AtList >
+  <AtListItem className="row" title='标题文字' note='描述信息' />
+  <AtListItem  className="row" title='标题文字' note='描述信息' arrow='right' />
+  <AtListItem  className="row" title='标题文字' note='描述信息' arrow='right' />
+  <AtListItem  className="row" title='标题文字' note='描述信息' arrow='right' />
+  <AtListItem  className="row" title='标题文字' note='描述信息' arrow='right' />
+  <AtListItem  className="row" title='标题文字' note='描述信息' arrow='right' />
+  <AtListItem  className="row" title='标题文字' note='描述信息' arrow='right' />
+</AtList>
 
+            </View>
         )
     }
 }

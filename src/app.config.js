@@ -1,16 +1,16 @@
 export default {
   pages: [
-    'pages/index/index',
-    'pages/login/index',
+    'pages/mood/index',
+    'pages/exp/index',
     'pages/mine/index',
   ],
-  "subpackages": [
-    {
-      "root": "pagesMine",
-      "pages": [
-        "mine/mine"
-      ]
-    }],
+  // "subpackages": [
+  //   {
+  //     "root": "pagesMine",
+  //     "pages": [
+  //       "mine/mine"
+  //     ]
+  //   }],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
@@ -20,22 +20,22 @@ export default {
   tabBar: {
     list: [
       {
-        pagePath: 'pages/index/index',
-        text: '个人简介',
-        iconPath: './public/images/tab/home.png',
-        selectedIconPath: './public/images/tab/home-active.png',
+        pagePath: 'pages/mood/index',
+        text: 'Mood',
+        iconPath: './public/images/tab/classic.png',
+        selectedIconPath: './public/images/tab/classic@highlight.png',
       },
       {
-        pagePath: 'pages/login/index',
-        text: '项目经验',
-        iconPath: './public/images/tab/cart.png',
-        selectedIconPath: './public/images/tab/cart-active.png',
+        pagePath: 'pages/exp/index',
+        text: 'Exp',
+        iconPath: './public/images/tab/book.png',
+        selectedIconPath: './public/images/tab/book@highlight.png',
       },
       {
         pagePath: 'pages/mine/index',
-        text: '教育背景',
-        iconPath: './public/images/tab/user.png',
-        selectedIconPath: './public/images/tab/user-active.png',
+        text: 'Mine',
+        iconPath: './public/images/tab/my.png',
+        selectedIconPath: './public/images/tab/my@highlight.png',
       },
     ],
     color: '#002766',
