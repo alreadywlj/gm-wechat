@@ -17,6 +17,7 @@ export default {
     navigationBarTitleText: 'Hi 欢迎来到 JerryWei 的个人空间',
     navigationBarTextStyle: 'black'
   },
+  requiredBackgroundModes: ["audio"],
   tabBar: {
     list: [
       {

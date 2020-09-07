@@ -8,7 +8,6 @@ import { AtCard } from "taro-ui"
 
 import './content.less';
 
-
 export default class Contents extends Component {
 
     state = {
@@ -96,8 +95,7 @@ export default class Contents extends Component {
              <Text className="tip1">句</Text>
 
              <Text className="tip2">子</Text>
-
-             <Text className="tip2"></Text>
+            
              </View>
 
              <Text className="mood">雨下整夜,我的爱溢出就像雨水</Text>

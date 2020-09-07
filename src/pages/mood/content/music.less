@@ -1,0 +1,39 @@
+.music {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  .m_image {
+    height: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 5vh;
+    height: 35vh;
+    border-radius: 50%;
+  }
+
+  .m_icon {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top:-50%;
+    color: black;
+    width: 5rpx;
+    height: 5vh;
+  }
+
+  .rotate {
+    animation: rotate 6s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

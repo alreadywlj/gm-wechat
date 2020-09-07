@@ -4,24 +4,17 @@ import { View, Text, Image, } from '@tarojs/components';
 
 import Taro, { requirePlugin } from '@tarojs/taro';
 
-import { AtCard } from "taro-ui"
+import { AtCard, AtIcon } from "taro-ui"
 
-import './audio.less';
+import './music.less';
 
-const audio =   Taro.getBackgroundAudioManager();
-
-export default class Audio extends Component {
+export default class Music extends Component {
 
     state = {
-
+      
     }
 
     componentWillMount() {
-        audio.title = '此时此刻'
-        audio.epname = '此时此刻'
-        audio.singer = '许巍'
-        audio.coverImgUrl = 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000'
-// 设置了 src 之后会自动播放
         // console.log("willMount--->页面加载前", "1");
     }
 
@@ -30,6 +23,20 @@ export default class Audio extends Component {
      * 页面初始化时会调用 
      */
     componentDidMount() {
+        const backgroundAudioManager = Taro.getBackgroundAudioManager();
+        backgroundAudioManager.title = '此时此刻';
+        backgroundAudioManager.epname = '此时此刻';
+        backgroundAudioManager.singer = '许巍';
+        backgroundAudioManager.coverImgUrl = 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000';
+        // 设置了 src 之后会自动播放
+        backgroundAudioManager.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46';
+        backgroundAudioManager.play();
+        backgroundAudioManager.onPlay(() => {
+              console.log("音乐播放开始");
+          })
+        backgroundAudioManager.onEnded(() => {
+              console.log("音乐播放结束");
+          })
         // console.log("componentDidMount-->页面加载时", "2");
     }
 
@@ -44,6 +51,7 @@ export default class Audio extends Component {
      * 在react中不存在 页面显示时会触发
      */
     componentDidShow() {
+
         // console.log("页面显示时会触发--->componentDidShow", "2");
     }
 
@@ -89,22 +97,25 @@ export default class Audio extends Component {
         console.log(e);
     }
 
+    playMusic = (e) => {
 
+        // backgroundAudioManager.onPlay(()=>{
+        //     console.log('音乐播放开始');
+        // });
+
+    }
 
     render() {
 
         return (
-            <View className='components-page'>
-            <Audio
-              src='https://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46'
-              controls={true}
-              autoplay={false}
-              loop={false}
-              muted={true}
-              initialTime='30'
-              id='video'
-            />
-          </View>
+            <View className="music">
+
+                <Image className="m_image" src="https://gss0.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/241f95cad1c8a786dc0cdb9b6609c93d70cf5004.jpg"></Image>
+
+                <AtIcon value='play' className="m_icon" size='30' onClick={this.playMusic.bind(this)}></AtIcon>
+
+            </View>
+
         )
     }
 }

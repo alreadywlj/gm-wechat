@@ -4,7 +4,7 @@ import { View, Text, Image, } from '@tarojs/components';
 
 import Taro, { requirePlugin } from '@tarojs/taro';
 
-import { AtCard } from "taro-ui"
+import { AtCard, AtIcon } from "taro-ui"
 
 import './banner.less';
 
@@ -85,15 +85,19 @@ export default class Banner extends Component {
 
 
 
+
+
     render() {
 
         return (
-           <View className="banner">
+            <View className="banner">
 
-              <Image className="image" src="https://gss0.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/241f95cad1c8a786dc0cdb9b6609c93d70cf5004.jpg"></Image>
+                <Image className="image" src="https://gss0.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/241f95cad1c8a786dc0cdb9b6609c93d70cf5004.jpg"></Image>
 
-           </View>    
-          
+            </View>
+
+
+
         )
     }
 }

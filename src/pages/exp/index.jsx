@@ -97,8 +97,6 @@ export default class Login extends Component {
       //最外层
       <View className='index'>
 
-       <AtDivider content='个人经验' fontColor='#ff9900' lineColor='#ff9900' />  
-
           <Card cards={this.state.cards}></Card>
 
         {/* <View className='image'>

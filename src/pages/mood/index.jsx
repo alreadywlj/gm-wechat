@@ -16,8 +16,7 @@ import Content from './content/content';
 
 import Footer from './footer/footer';
 
-import Audio from '../commpents/audio/audio';
-
+import Music from './content/music';
 // process.env.TARO_ENV;
 
 import { AtButton, AtFab, AtTabs, AtTabsPane, AtNoticebar } from 'taro-ui'
@@ -156,14 +155,16 @@ export default class Index extends Component {
 
     return (
       <View className='index'>
+       
          <Header></Header>
           
-         <Banner></Banner>
+         {/* <Banner></Banner> */}
        
+         <Music></Music>
+
          <Content></Content>
  
          <Footer></Footer>
-
 
 
         {/* <View className='banner'>
