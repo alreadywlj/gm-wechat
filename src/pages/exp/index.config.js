@@ -1,3 +1,4 @@
+
 export default {
-  navigationBarTitleText: '经验'
+  navigationBarTitleText: '项目经验'
 }

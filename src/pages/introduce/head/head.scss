@@ -1,0 +1,25 @@
+.header {
+  margin: auto;
+  height: 15vh;
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .text {
+    margin-left: 5%;
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 0.5vh;
+  }
+
+  .line {
+    margin-left: 5%;
+    color: #1890ff;
+    width: 160rpx;
+    border-bottom: solid;
+    border-width: medium;
+  }
+
+}

@@ -1,18 +1,25 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 import { View, Text, Image, } from '@tarojs/components';
 
-import Taro, { requirePlugin } from '@tarojs/taro';
+import Taro, { requirePlugin, } from '@tarojs/taro';
 
-import { AtCard } from "taro-ui"
+import { connect } from 'react-redux';
 
-import './card.less';
+import { AtCard, AtIcon, AtDivider } from "taro-ui";
+
+import styles from './card.scss';
+
+@connect(({ exp }) => ({
+    ...exp,
+}))
 
 
 export default class Card extends Component {
 
-    state = {
-
+    constructor(props) {
+        super(props)
+        this.state = {}
     }
 
     componentWillMount() {
@@ -87,22 +94,91 @@ export default class Card extends Component {
      */
     componentWillReceiveProps() { }
 
-    jump = (e) => {
-        console.log(e);
+
+    handleNavigate = (e, index, item) => {
+
+        Taro.navigateTo({
+            url: `/components/article/article?id=${item.name}`,
+            //   events: {
+            //     // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+            //     acceptDataFromOpenedPage: function(data) {
+            //       console.log(data)
+            //     },
+            //     someEvent: function(data) {
+            //       console.log(data)
+            //     }
+            //   },
+            //   success: function (res) {
+            //     // 通过eventChannel向被打开页面传送数据
+            //     res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
+            //   }
+        });
     }
 
     render() {
-         const {cards} =  this.state;
+        const { cards } = this.state;
         return (
-            <View className="card">
+            <View className={styles.card}>
                 {
-               
-               cards.map(item =>                    
-                 <View className="item">{item.name}</View>                    
-                )
+                    // cards.map((item,index) =>
+                    //     <View
+                    //         onClick={(e)=>this.handleNavigate(e,index,item)}
+                    //         className={styles.item}>
+                    //         {item.name}                    
+                    //     </View>
+                    // )
 
                 }
-            </View>
+
+                <View style="margin-top:2vh;"></View>
+
+                <AtCard
+                    note='小Tips'
+                    extra='额外信息'
+                    title='这是个标题'
+                    thumb='http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG'
+                    className={styles.oCard}
+                >
+                    这也是内容区 可以随意定义功能
+                </AtCard>
+
+                <View style="margin-top:2vh;"></View>
+
+                <AtCard
+                    note='小Tips'
+                    extra='额外信息'
+                    title='这是个标题'
+                    thumb='http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG'
+                    className={styles.oCard}
+                >
+                    这也是内容区 可以随意定义功能
+                </AtCard>
+
+                <View style="margin-top:2vh;"></View>
+
+                <AtCard
+                    note='小Tips'
+                    extra='额外信息'
+                    title='这是个标题'
+                    thumb='http://www.logoquan.com/upload/list/20180421/logoquan15259400209.PNG'
+                    className={styles.oCard}
+                >
+                    这也是内容区 可以随意定义功能
+                </AtCard>
+
+                <View style="margin-top:2vh;"></View>
+
+                <AtCard
+                    note='小Tips'
+                    extra='额外信息'
+                    title='这是个标题'
+                    className={styles.oCard}
+                    renderIcon={<AtIcon value='star' size='15' color='red' />}
+                >
+                    这也是内容区 可以随意定义功能
+                </AtCard>
+
+            </View >
         )
     }
 }

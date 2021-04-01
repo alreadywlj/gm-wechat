@@ -1,0 +1,36 @@
+.header {
+  margin: auto;
+  height: 25vh;
+  background-color: #ffffff;
+  width: 90%;
+  border: 0.5px solid #e6f7ff;
+  margin-top: 7vh;
+  text-align: center;
+
+  .panel__title {
+    position: relative;
+    margin-bottom: 1.06667rem;
+    padding-left: 1.06667rem;
+    font-size: .68267rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .photo {
+    position: absolute;
+    margin-top: -6vh;
+    left: 42%;
+  }
+
+  .name {
+    margin-top: 5vh;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: #ffa39e;
+  }
+
+  .tg {
+    margin-top: 15vh;
+  }
+
+
+}

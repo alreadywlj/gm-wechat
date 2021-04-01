@@ -1,0 +1,32 @@
+.header {
+  margin: auto;
+  height: 20vh;
+  background-color: #ffffff;
+  width: 90%;
+  margin-top: 2vh;
+  text-align: center;
+
+  .tag {
+    height: 5.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border: 0.5px solid #e6f7ff;
+
+    .font {
+      margin-left: 10rpx;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: small;
+      color: #000000;
+    }
+  }
+
+  .content {
+    height: 14vh;
+    // margin-top: 0.3vh;
+    border: 0.5px solid #e6f7ff;
+  }
+
+
+}

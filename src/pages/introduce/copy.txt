@@ -1,0 +1,46 @@
+// <View className={style.index}>
+
+      //   <van-button type="primary">按钮</van-button>
+
+      //   <AtAvatar text='魏栗君' image='https://jdc.jd.com/img/200' size="large"></AtAvatar>
+
+      //   <AtDivider content='个人技能' fontColor='#ed3f14' lineColor='#ed3f14' />
+
+      // </View>
+{/* <View style="margin-top:3vh;" />
+
+        <View className='at-row'>
+          <View className='at-col at-col__offset-5'>
+            <AtAvatar text='魏栗君' size="large" ></AtAvatar>
+          </View>
+
+        </View>
+
+
+        <View className='at-row' style='margin-top:1vh'>
+          <View className='at-col at-col__offset-5'>
+            <View>魏栗君</View>
+          </View>
+        </View>
+
+        <View className='at-row' style='margin-top:1vh'>
+          <View className='at-col' />
+          <View className='at-col'>
+            <AtTag type='primary' size='large'>Java开发工程师</AtTag>
+          </View>
+          <View className='at-col' />
+        </View>
+
+        <View style="margin-top:3vh;" />
+
+
+        <View style="width:90%;height: 5vh; margin:auto; background-color:green;" ></View>
+        <br />
+
+        <View style="width:90%;height: 20vh; margin:auto; background-color:red;">
+
+        <View style="width:90%;height: 5vh; margin:auto; background-color:green;" ></View>
+        <br />
+
+        <View style="width:90%;height: 20vh; margin:auto; background-color:red;"></View>
+        </View> */}

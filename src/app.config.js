@@ -1,16 +1,13 @@
 export default {
   pages: [
-    'pages/mood/index',
+    // 'pages/index/index',
+    // 'pages/test/index',
+   // 'pages/mood/index',
     'pages/exp/index',
     'pages/mine/index',
+    'pages/introduce/index',
+    'components/article/article',
   ],
-  // "subpackages": [
-  //   {
-  //     "root": "pagesMine",
-  //     "pages": [
-  //       "mine/mine"
-  //     ]
-  //   }],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
@@ -21,20 +18,20 @@ export default {
   tabBar: {
     list: [
       {
-        pagePath: 'pages/mood/index',
-        text: 'Mood',
+        pagePath: 'pages/introduce/index',
+        text: '简介',
         iconPath: './public/images/tab/classic.png',
         selectedIconPath: './public/images/tab/classic@highlight.png',
       },
       {
         pagePath: 'pages/exp/index',
-        text: 'Exp',
+        text: '项目经验',
         iconPath: './public/images/tab/book.png',
         selectedIconPath: './public/images/tab/book@highlight.png',
       },
       {
         pagePath: 'pages/mine/index',
-        text: 'Mine',
+        text: '关于作者',
         iconPath: './public/images/tab/my.png',
         selectedIconPath: './public/images/tab/my@highlight.png',
       },
@@ -46,5 +43,3 @@ export default {
   },
 
 }
-
-
